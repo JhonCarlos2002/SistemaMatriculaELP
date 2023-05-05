@@ -17,4 +17,8 @@ public class Matricula {
     private LocalDateTime fechaderegistro;
     private Double costo;
 
+    @ManyToOne
+    @JoinColumn(name = "idalumno",referencedColumnName = "idalumno",nullable = false)
+    private  Alumno alumno;
+
 }
