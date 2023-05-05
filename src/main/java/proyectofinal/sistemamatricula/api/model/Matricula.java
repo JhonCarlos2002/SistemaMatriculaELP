@@ -1,7 +1,6 @@
 package proyectofinal.sistemamatricula.api.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -11,7 +10,15 @@ import java.time.LocalDateTime;
 @Table(name="matricula")
 public class Matricula {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idmatricula")
     private Integer id;
     private LocalDateTime fechadereistro;
     private Double costo;
+
+    @ManyToOne
+    @JoinColumn(name="idalumno",referencedColumnName = "idalumno",nullable = false)
+    private Alumno alumno;
+
 }
