@@ -7,18 +7,18 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
-@Table(name="matricula")
-public class Matricula {
+@Table(name = "matricula")
 
+public class Matricula {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     @Column(name = "idmatricula")
-    private Integer id;
-    private LocalDateTime fechadereistro;
+    private  Integer id;
+    private LocalDateTime fechaderegistro;
     private Double costo;
 
     @ManyToOne
-    @JoinColumn(name="idalumno",referencedColumnName = "idalumno",nullable = false)
-    private Alumno alumno;
+    @JoinColumn(name = "idalumno",referencedColumnName = "idalumno",nullable = false)
+    private  Alumno alumno;
 
 }
