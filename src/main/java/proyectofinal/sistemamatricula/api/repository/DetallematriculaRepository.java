@@ -1,4 +1,7 @@
 package proyectofinal.sistemamatricula.api.repository;
 
-public interface DetallematriculaRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import proyectofinal.sistemamatricula.api.model.Detallematricula;
+
+public interface DetallematriculaRepository extends JpaRepository<Detallematricula,Integer> {
 }
