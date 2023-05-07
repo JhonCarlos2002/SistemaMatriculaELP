@@ -11,10 +11,13 @@ public class Cursos {                   //Sin miedo al exito muchachitos
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idcursos")
     private Integer idCursos;
+    private String codigocurso;
     private String nombrecurso;
+    private String sede;
     private Integer credito;
     private String ciclo;
-    private String codigocurso;
+    private String seccion;
+
 
 
 }
