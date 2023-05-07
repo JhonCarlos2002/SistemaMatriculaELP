@@ -12,8 +12,6 @@ public class Alumno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idalumno")
-
-
     private  Integer id;
     private  String nombre;
     private  String appaterno;
@@ -27,6 +25,6 @@ public class Alumno {
     private String correo;
 
     @ManyToOne
-    @JoinColumn(name = "idusuario", referencedColumnName = "idUsuario", nullable = false)
+    @JoinColumn(name = "idusuario", referencedColumnName = "idusuario", nullable = false)
     private Usuario usuario;
 }

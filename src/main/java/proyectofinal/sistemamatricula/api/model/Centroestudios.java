@@ -7,7 +7,7 @@ import lombok.Data;
 @Entity
 @Table(name="centroestudios")
 public class Centroestudios {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (name = "idcentroestudios")
