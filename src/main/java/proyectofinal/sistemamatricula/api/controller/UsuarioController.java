@@ -1,4 +1,4 @@
 package proyectofinal.sistemamatricula.api.controller;
 
-public class CursosController {
+public class UsuarioController {
 }

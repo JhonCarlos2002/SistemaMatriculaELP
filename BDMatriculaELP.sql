@@ -36,6 +36,7 @@ CREATE TABLE `alumno` (
   `email` varchar(200) DEFAULT NULL,
   `correopersonal` varchar(255) DEFAULT NULL,
   `idusuario` int DEFAULT NULL,
+  `correo` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idalumno`),
   KEY `fk_idusuario_idx` (`idusuario`),
   CONSTRAINT `fk_idusuario` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`idusuario`) ON DELETE SET NULL ON UPDATE SET NULL
@@ -106,10 +107,12 @@ DROP TABLE IF EXISTS `cursos`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `cursos` (
   `idcursos` int NOT NULL AUTO_INCREMENT,
+  `codigocurso` varchar(45) DEFAULT NULL,
   `nombrecurso` varchar(100) DEFAULT NULL,
+  `sede` varchar(45) DEFAULT NULL,
   `credito` int DEFAULT NULL,
   `ciclo` varchar(5) DEFAULT NULL,
-  `codigocurso` varchar(45) DEFAULT NULL,
+  `seccion` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idcursos`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -162,18 +165,18 @@ CREATE TABLE `matricula` (
   `idalumno` int DEFAULT NULL,
   `idcarreras` int DEFAULT NULL,
   `idtipodealumno` int DEFAULT NULL,
-  `idcentroestudios1` int DEFAULT NULL,
-  `idcursos1` int DEFAULT NULL,
+  `idcentroestudios` int DEFAULT NULL,
+  `idcursos` int DEFAULT NULL,
   PRIMARY KEY (`idmatricula`),
   KEY `fk-idalumno_idx` (`idalumno`),
   KEY `fk_idcarreras_idx` (`idcarreras`),
-  KEY `fk_idcursos_idx` (`idcursos1`),
   KEY `fk_idtipodealumno_idx` (`idtipodealumno`),
-  KEY `fk_idcentroestudios_idx` (`idcentroestudios1`),
+  KEY `fk_idcursos_idx` (`idcursos`),
+  KEY `fk_idcentroestudios_idx` (`idcentroestudios`),
   CONSTRAINT `fk-idalumno` FOREIGN KEY (`idalumno`) REFERENCES `alumno` (`idalumno`) ON DELETE SET NULL ON UPDATE SET NULL,
   CONSTRAINT `fk_idcarreras` FOREIGN KEY (`idcarreras`) REFERENCES `carreras` (`idcarreras`) ON DELETE SET NULL ON UPDATE SET NULL,
-  CONSTRAINT `fk_idcentroestudios1` FOREIGN KEY (`idcentroestudios1`) REFERENCES `centroestudios` (`idcentroestudios`) ON DELETE SET NULL ON UPDATE SET NULL,
-  CONSTRAINT `fk_idcursos1` FOREIGN KEY (`idcursos1`) REFERENCES `cursos` (`idcursos`) ON DELETE SET NULL ON UPDATE SET NULL,
+  CONSTRAINT `fk_idcentroestudios` FOREIGN KEY (`idcentroestudios`) REFERENCES `centroestudios` (`idcentroestudios`) ON DELETE SET NULL ON UPDATE SET NULL,
+  CONSTRAINT `fk_idcursos` FOREIGN KEY (`idcursos`) REFERENCES `cursos` (`idcursos`) ON DELETE SET NULL ON UPDATE SET NULL,
   CONSTRAINT `fk_idtipodealumno` FOREIGN KEY (`idtipodealumno`) REFERENCES `tipodealumno` (`idtipodealumno`) ON DELETE SET NULL ON UPDATE SET NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -251,4 +254,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-07 10:10:26
+-- Dump completed on 2023-05-07 14:04:28
