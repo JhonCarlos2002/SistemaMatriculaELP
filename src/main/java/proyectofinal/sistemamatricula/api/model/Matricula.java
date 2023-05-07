@@ -13,12 +13,31 @@ public class Matricula {
     @Id
     @GeneratedValue
     @Column(name = "idmatricula")
-    private  Integer id;
+    private  Integer idMatricula;
     private LocalDateTime fechaderegistro;
     private Double costo;
 
     @ManyToOne
     @JoinColumn(name = "idalumno",referencedColumnName = "idalumno",nullable = false)
     private  Alumno alumno;
+
+    @ManyToOne
+    @JoinColumn(name = "idcursos1",referencedColumnName = "idcursos",nullable = false)
+    private  Cursos cursos;
+
+    @ManyToOne
+    @JoinColumn(name = "idcentroestudios1",referencedColumnName = "idcentroestudios",nullable = false)
+    private Centroestudios centroestudios;
+
+    @ManyToOne
+    @JoinColumn(name = "idtipodealumno",referencedColumnName = "idtipodealumno",nullable = false)
+    private Tipodealumno tipodealumno;
+
+    @ManyToOne
+    @JoinColumn(name = "idcarreras",referencedColumnName = "idcarreras",nullable = false)
+    private Carreras carreras;
+
+
+
 
 }
