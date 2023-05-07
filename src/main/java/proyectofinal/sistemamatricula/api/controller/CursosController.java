@@ -4,4 +4,6 @@ public class CursosController {
 
     String perPianto;
     String escuela;
+    String llllll;
+
 }
