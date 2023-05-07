@@ -191,28 +191,6 @@ LOCK TABLES `matricula` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `matricula_seq`
---
-
-DROP TABLE IF EXISTS `matricula_seq`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `matricula_seq` (
-  `next_val` bigint DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `matricula_seq`
---
-
-LOCK TABLES `matricula_seq` WRITE;
-/*!40000 ALTER TABLE `matricula_seq` DISABLE KEYS */;
-INSERT INTO `matricula_seq` VALUES (1);
-/*!40000 ALTER TABLE `matricula_seq` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `tipodealumno`
 --
 
@@ -276,4 +254,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-07 13:54:58
+-- Dump completed on 2023-05-07 14:04:28
