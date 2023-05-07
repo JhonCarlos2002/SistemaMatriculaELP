@@ -5,7 +5,7 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name="cursos")
-public class Cursos {                   //Sin miedo al exito muchachitos
+public class Cursos {                   //Sin miedo al exito muchachos
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
