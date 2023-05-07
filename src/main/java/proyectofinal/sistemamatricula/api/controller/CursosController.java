@@ -2,7 +2,7 @@ package proyectofinal.sistemamatricula.api.controller;
 
 public class CursosController {
 
-    String perPianto;
+    String perPianta;
     String escuela;
     String llllll;
 
