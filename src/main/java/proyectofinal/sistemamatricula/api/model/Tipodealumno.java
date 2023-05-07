@@ -5,14 +5,12 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name="usuario")
-public class Usuario {
+@Table(name="tipodealumno")
 
+public class Tipodealumno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idusuario")
-    private  Integer idUsuario;
-    private String nombredeusuario;
-    private String contraseña;
-
+    @Column(name="idtipodealumno")
+    private Integer idTipoa;
+    private String tipodealumno;
 }
