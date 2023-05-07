@@ -20,7 +20,7 @@ public class Alumno {
     private  String direccion;
     private String telefono;
     private Date fechanacimiento;
-    private  String sexo;
+    private  String genero;
     private String codigoalumno;
     private String correo;
 }
