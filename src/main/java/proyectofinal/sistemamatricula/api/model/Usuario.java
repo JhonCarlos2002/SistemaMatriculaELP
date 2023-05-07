@@ -14,4 +14,8 @@ public class Usuario {
     private  Integer idUsuario;
     private String nombredeusuario;
     private String contraseña;
+
+    @ManyToOne
+    @JoinColumn(name = "idusuario", referencedColumnName = "idUsuario", nullable = false)
+    private Usuario usuario;
 }
